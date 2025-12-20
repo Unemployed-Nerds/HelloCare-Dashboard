@@ -56,7 +56,17 @@ export const AuthProvider = ({ children }) => {
         setUser(demoUser);
     };
 
-    const logout = () => {
+    const logout = async () => {
+        try {
+            // Call backend logout to log the action
+            const token = localStorage.getItem('token');
+            if (token && token !== 'demo-token') {
+                await api.post('/auth/admin/logout');
+            }
+        } catch (error) {
+            console.error('Logout API call failed:', error);
+            // Continue with local logout even if API call fails
+        }
         localStorage.removeItem('token');
         localStorage.removeItem('user');
         setUser(null);
