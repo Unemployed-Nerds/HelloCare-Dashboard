@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Users, Calendar, LogOut, Moon, Sun, User, DollarSign } from 'lucide-react';
+import { LayoutDashboard, Users, Calendar, LogOut, Moon, Sun, User, DollarSign, FileText } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 import { useTheme } from '../context/ThemeContext';
 import clsx from 'clsx';
@@ -16,6 +16,7 @@ const Sidebar = () => {
         { icon: User, label: 'Patients', path: '/patients' },
         { icon: Calendar, label: 'Appointments', path: '/appointments' },
         { icon: DollarSign, label: 'Revenue', path: '/revenue' },
+        { icon: FileText, label: 'Audit Logs', path: '/audit-logs' },
     ];
 
     return (
