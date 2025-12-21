@@ -27,10 +27,13 @@ const ProtectedRoute = ({ children }) => {
 };
 
 function App() {
+    // Get base path from Vite's base config for GitHub Pages
+    const basename = import.meta.env.BASE_URL;
+
     return (
         <AuthProvider>
             <ThemeProvider>
-                <Router>
+                <Router basename={basename}>
                     <Routes>
                         <Route path="/login" element={<Login />} />
                         <Route path="/" element={
