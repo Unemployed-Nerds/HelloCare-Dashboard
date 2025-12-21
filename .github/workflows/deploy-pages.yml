@@ -5,8 +5,6 @@ on:
   # Trigger on push to main branch
   push:
     branches: ["main"]
-    paths:
-      - "HelloCare-Dashboard/**"
   
   # Allow manual trigger
   workflow_dispatch:
@@ -26,9 +24,6 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: HelloCare-Dashboard
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -60,7 +55,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: HelloCare-Dashboard/dist
+          path: dist
 
   # Deployment job
   deploy:
