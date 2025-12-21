@@ -4,7 +4,6 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [react()],
-    // Base path for GitHub Pages deployment
-    // Change 'HelloCare-Dashboard' to your repository name if different
-    base: process.env.GITHUB_ACTIONS ? '/HelloCare-Dashboard/' : '/',
+    // Base path - use '/' for custom domain (dashboard.abhishekcodes.tech)
+    base: '/',
 })
